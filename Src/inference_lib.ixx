@@ -1,5 +1,4 @@
 module;
-
 #include <string>
 
 #if defined(_WIN32) || defined(_WIN64)
@@ -12,16 +11,15 @@ module;
 #  define KATAGLYPHIS_CPP_API __attribute__((visibility("default")))
 #endif
 
-module kataglyphis.inference;
+export module kataglyphis.inference;
 
-namespace mylib {
+export namespace mylib {
 
-KATAGLYPHIS_CPP_API int MyCalculator::add(int a, int b) const {
-	return a + b;
+class KATAGLYPHIS_CPP_API MyCalculator {
+public:
+	MyCalculator() = default;
+	int add(int a, int b) const;
+	std::string version() const;
+};
+
 }
-
-KATAGLYPHIS_CPP_API std::string MyCalculator::version() const {
-	return "1.0.0";
-}
-
-} // namespace mylib

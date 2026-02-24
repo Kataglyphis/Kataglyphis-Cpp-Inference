@@ -10,8 +10,6 @@ module;
 #  define KATAGLYPHIS_C_API __attribute__((visibility("default")))
 #endif
 
-module kataglyphis.c_api;
+export module kataglyphis.c_api;
 
-extern "C" KATAGLYPHIS_C_API int kataglyphis_add(int a, int b) {
-    return a + b;
-}
+export extern "C" KATAGLYPHIS_C_API int kataglyphis_add(int a, int b);
